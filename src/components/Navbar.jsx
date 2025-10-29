@@ -65,12 +65,12 @@ const Navbar = () => {
               </li>
               <li>
                 <NavLink
-                  to="/dashboardpage"
+                  to="/bookmarkspage"
                   className={({ isActive }) =>
                     isActive ? "text-green-600 font-medium" : "font-normal"
                   }
                 >
-                  Dashboardpage
+                  Bookmarkspage
                 </NavLink>
               </li>
             </ul>
@@ -103,12 +103,12 @@ const Navbar = () => {
             </li>
             <li>
               <NavLink
-                to="/dashboardpage"
+                to="/bookmarkspage"
                 className={({ isActive }) =>
                   isActive ? "text-green-600 font-medium" : "font-normal"
                 }
               >
-                Dashboardpage
+                Bookmarkspage
               </NavLink>
             </li>
           </ul>

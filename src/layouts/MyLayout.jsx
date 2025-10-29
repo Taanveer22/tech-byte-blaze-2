@@ -6,7 +6,7 @@ const MyLayout = () => {
   return (
     <div>
       <Navbar></Navbar>
-      <div className="min-h-[calc(100vh-116px)] py-12">
+      <div className="min-h-[calc(100vh-116px)]">
         <Outlet></Outlet>
       </div>
       <Footer></Footer>

@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MyLayout from "../layouts/MyLayout";
 import Homepage from "../pages/Homepage";
 import Blogspage from "../pages/Blogspage";
-import Dashboardpage from "../pages/Dashboardpage";
+import Bookmarkspage from "../pages/Bookmarkspage";
 
 const myRouter = createBrowserRouter([
   {
@@ -18,8 +18,8 @@ const myRouter = createBrowserRouter([
         element: <Blogspage></Blogspage>,
       },
       {
-        path: "/dashboardpage",
-        element: <Dashboardpage></Dashboardpage>,
+        path: "/bookmarkspage",
+        element: <Bookmarkspage></Bookmarkspage>,
       },
     ],
   },
