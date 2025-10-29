@@ -44,28 +44,72 @@ const Navbar = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <NavLink to="/">Homepage</NavLink>
+                <NavLink
+                  to="/"
+                  className={({ isActive }) =>
+                    isActive ? "text-green-600 font-medium" : "font-normal"
+                  }
+                >
+                  Homepage
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/blogspage">Blogspage</NavLink>
+                <NavLink
+                  to="/blogspage"
+                  className={({ isActive }) =>
+                    isActive ? "text-green-600 font-medium" : "font-normal"
+                  }
+                >
+                  Blogspage
+                </NavLink>
               </li>
               <li>
-                <NavLink to="/dashboardpage">Dashboardpage</NavLink>
+                <NavLink
+                  to="/dashboardpage"
+                  className={({ isActive }) =>
+                    isActive ? "text-green-600 font-medium" : "font-normal"
+                  }
+                >
+                  Dashboardpage
+                </NavLink>
               </li>
             </ul>
           </div>
-          <button className="btn btn-ghost text-xl">Byte Blaze</button>
+          <button className="btn btn-ghost text-3xl font-bold">
+            Byte Blaze
+          </button>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1">
+          <ul className="menu menu-horizontal px-1 text-lg">
             <li>
-              <NavLink to="/">Homepage</NavLink>
+              <NavLink
+                to="/"
+                className={({ isActive }) =>
+                  isActive ? "text-green-600 font-medium" : "font-normal"
+                }
+              >
+                Homepage
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/blogspage">Blogspage</NavLink>
+              <NavLink
+                to="/blogspage"
+                className={({ isActive }) =>
+                  isActive ? "text-green-600 font-medium" : "font-normal"
+                }
+              >
+                Blogspage
+              </NavLink>
             </li>
             <li>
-              <NavLink to="/dashboardpage">Dashboardpage</NavLink>
+              <NavLink
+                to="/dashboardpage"
+                className={({ isActive }) =>
+                  isActive ? "text-green-600 font-medium" : "font-normal"
+                }
+              >
+                Dashboardpage
+              </NavLink>
             </li>
           </ul>
           <label className="flex cursor-pointer gap-2">
