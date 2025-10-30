@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Link, Outlet, useLoaderData, useParams } from "react-router-dom";
-
+import { MdBookmarkAdd } from "react-icons/md";
+import { setToLocalStorage } from "../utilities";
 const CardDetail = () => {
   const blogDetailData = useLoaderData();
   // console.log(blogDetailData);
@@ -15,6 +16,10 @@ const CardDetail = () => {
   console.log(id);
   const [tabIndex, setTabIndex] = useState(0);
   // console.log(tabIndex);
+  const handleAddToBookmark = (blogDetailData) => {
+    console.log(blogDetailData);
+    setToLocalStorage( blogDetailData);
+  };
   return (
     <>
       <div className="max-w-3xl px-6 py-16 mx-auto space-y-12">
@@ -78,6 +83,12 @@ const CardDetail = () => {
             </svg>
             <span>Author</span>
           </Link>
+          <div
+            onClick={() => handleAddToBookmark(blogDetailData)}
+            className="text-blue-500 p-3 ml-6 bg-gray-300 rounded-full"
+          >
+            <MdBookmarkAdd size={30}></MdBookmarkAdd>
+          </div>
         </div>
         <Outlet></Outlet>
       </div>

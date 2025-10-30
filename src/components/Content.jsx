@@ -3,6 +3,7 @@ import placeholderImage from "../assets/404.jpg";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
+
 const Content = () => {
   const blogDetailData = useLoaderData();
   // console.log(blogDetailData);

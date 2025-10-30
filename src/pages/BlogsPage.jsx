@@ -30,7 +30,7 @@ const BlogsPage = () => {
           </div>
           {/* ============ blogs card map ========== */}
           <div className="grid justify-center grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {blogsData.map((blogItem) => (
+            {blogsData.slice(1, 19).map((blogItem) => (
               <Card key={blogItem.id} blogItem={blogItem}></Card>
             ))}
           </div>
