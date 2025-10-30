@@ -1,8 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
 import MyLayout from "../layouts/MyLayout";
 import Homepage from "../pages/Homepage";
-import Blogspage from "../pages/Blogspage";
 import Bookmarkspage from "../pages/Bookmarkspage";
+import Blogspage from "../pages/BlogsPage";
+import CardDetail from "../components/CardDetail";
+import Content from "../components/Content";
+import Author from "../components/Author";
 
 const myRouter = createBrowserRouter([
   {
@@ -16,6 +19,23 @@ const myRouter = createBrowserRouter([
       {
         path: "/blogspage",
         element: <Blogspage></Blogspage>,
+        loader: () => fetch("https://dev.to/api/articles?per_page=20&top=7"),
+      },
+      {
+        path: "/cardDetail/:id",
+        element: <CardDetail></CardDetail>,
+        loader: ({ params }) =>
+          fetch(`https://dev.to/api/articles/${params.id}`),
+        children: [
+          {
+            path: "content",
+            element: <Content></Content>,
+          },
+          {
+            path: "author",
+            element: <Author></Author>,
+          },
+        ],
       },
       {
         path: "/bookmarkspage",
