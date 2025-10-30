@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link, Outlet, useLoaderData, useParams } from "react-router-dom";
 import { MdBookmarkAdd } from "react-icons/md";
 import { setToLocalStorage } from "../utilities";
+
 const CardDetail = () => {
   const blogDetailData = useLoaderData();
   // console.log(blogDetailData);
@@ -11,6 +12,7 @@ const CardDetail = () => {
     reading_time_minutes,
     public_reactions_count,
     published_at,
+    
   } = blogDetailData;
   const { id } = useParams();
   console.log(id);

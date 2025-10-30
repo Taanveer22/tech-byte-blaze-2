@@ -3,11 +3,10 @@ import placeholderImage from "../assets/404.jpg";
 import Markdown from "react-markdown";
 import rehypeRaw from "rehype-raw";
 
-
 const Content = () => {
   const blogDetailData = useLoaderData();
   // console.log(blogDetailData);
-  const { cover_image, title, tags, body_html } = blogDetailData;
+  const { cover_image, title, tags, body_html, url } = blogDetailData;
   return (
     <>
       <div className="w-full mx-auto group text-gray-400">
@@ -26,7 +25,13 @@ const Content = () => {
             </a>
           ))}
         </div>
-        <h3 className="text-2xl font-semibold">{title}</h3>
+        <a
+          href={url}
+          target={"_blank"}
+          className="text-2xl font-semibold underline"
+        >
+          {title}
+        </a>
         <div className="w-full overflow-x-hidden">
           <Markdown rehypePlugins={[rehypeRaw]}>{body_html}</Markdown>
         </div>

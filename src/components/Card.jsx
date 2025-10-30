@@ -1,11 +1,13 @@
 import { Link } from "react-router-dom";
 import placeholderImage from "../assets/404.jpg";
-const Card = ({ blogItem }) => {
+import { FaTrash } from "react-icons/fa";
+
+const Card = ({ blogItem, deletable, handleDeleteBookmark }) => {
   // console.log(blogItem);
   const { cover_image, title, description, published_at, id } = blogItem;
   return (
     <>
-      <div className="max-w-sm mx-auto group hover:no-underline focus:no-underline text-gray-400 border-2 border-primary hover:scale-105 hover:border-secondary">
+      <div className="max-w-sm mx-auto group hover:no-underline focus:no-underline text-gray-400 border-2 border-primary hover:scale-105 hover:border-secondary relative">
         <Link to={`/cardDetail/${id}`}>
           <img
             role="presentation"
@@ -22,6 +24,14 @@ const Card = ({ blogItem }) => {
             <p>{description}</p>
           </div>
         </Link>
+        {deletable && (
+          <div
+            onClick={() => handleDeleteBookmark(id)}
+            className="absolute -top-5 -right-5 bg-gray-500 text-red-500 p-3 rounded-full"
+          >
+            <FaTrash size={20}></FaTrash>
+          </div>
+        )}
       </div>
     </>
   );
